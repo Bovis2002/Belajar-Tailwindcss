@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode:'class',
+            theme: {
+                extend: {
+                    spacing: {
+                    13 : '3,25rem',    
+                    },
+                    fontFamily: {
+                        inter: ['Inter']
+                    },
+                    colors: {
+                        wpu: '#bda55',
+                        kopi: '#c0ffee',
+                    },
+                    animation: {
+                       'spin-slow': 'spin 3s linear infinite',
+                       goyang: 'goyang 1s ease-in-out infinite', 
+                    },
+                    keyframes:{
+                        goyang: {
+                            '0%, 100%' : { transform: 'rotate(-3deg)'},
+                            '50%' : { transform: 'rotate(3deg)'},
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <title>Belajar TailwindCSS</title>
+<style type="text/tailwindcss">
+#toggle:checked ~ label div.toggle-circle{
+    @apply translate-x-3
+}
+
+</style>
+</head>
+<body class="dark:bg-slate-800 dark:text-slate-200">
+    <h1 class="text-6xl font-bold text-center my-8">Mari Belajar <span class="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">TailwindCSS</span></h1>
+
+<section class="mb-10 bg-gradient-to-r from-indigo-200 via-red-400 to-yellow-300">
+    <h2 class="text-3xl text-center">Spacing</h2>
+    <div class="mt-13">Margin</div>
+    <div class="py-8">Padding</div>
+</section>
+<section class="mb-10 bg-green-200">
+    <h2 class="text-3xl text-center">Sizing</h2>
+    <div class="w-32 h-32 bg-yellow-200">Kotak 1</div>
+    <div class="max-w-xs min-h-screen">Kotak 2</div>
+</section>
+<section class="font-inter max-w-4xl mx-auto">
+    <h2 class="mb-2 text-4xl font-bold">Belajar mengenai typographi pada tailwindcss</h2>
+    <div class="mb-4 text-gray-500">By <a href="#" class="text-gray-700 font-semibold">Hafidz Istiqlaludin</a>, 8 september 2022</div>
+    <p class="mb-4">Lorem ipsum dolor sit amet <a href="#" class="underline font-semibold text-blue-600">consectetur</a> adipisicing elit. Porro consequatur beatae corrupti quaerat incidunt, rerum quia maxime tempore blanditiis vero amet maiores aperiam commodi impedit officia? Debitis soluta autem atque consectetur sit fugit aspernatur aperiam veritatis illum sunt ut possimus omnis quod eligendi facilis, delectus placeat quidem, commodi, voluptatem iure.
+    </p>
+    <blockquote class="mb-4 italic font-thin text-xl">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto veritatis autem aspernatur maiores amet nulla cum corrupti. Suscipit, est repellendus!"</blockquote>
+    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi explicabo autem doloribus cum nisi praesentium. Natus qui numquam rerum quia molestiae ad nisi, voluptatem harum cum, maiores tempore praesentium dignissimos.</p>
+</section>
+
+<div class="max-w-xl h-96 bg-[#bada55] mx-auto mt-[42] overflow-y-scroll bg-fixed" style="background-image: url('https://source.unsplash.com/1000x600?computer');">
+    <p class="p-5 text-2xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit blanditiis temporibus vel corporis eum veniam natus vero illo ad minus reiciendis maxime distinctio qui sint consequuntur inventore alias, obcaecati dolorum dolore ipsum est et aspernatur! Deserunt sapiente impedit recusandae earum quaerat temporibus eum ducimus similique eaque, praesentium ullam ipsum nisi dignissimos fuga sint? Rerum explicabo ipsa totam. Ut necessitatibus omnis aperiam illo consectetur dignissimos, quod, sunt architecto ea id dolores maiores sit vero, officia impedit delectus aut exercitationem totam? Repudiandae ex laudantium dolore sapiente veritatis cumque officia, vitae alias sed sit dolorem est voluptatum voluptates ut dolor aperiam, quibusdam nostrum. At illo quo quas blanditiis exercitationem inventore cum perspiciatis debitis veritatis. Temporibus animi aliquid nesciunt quidem accusantium quisquam consectetur provident adipisci cumque pariatur corrupti velit natus facere hic vitae illo saepe nemo possimus nostrum, facilis veritatis! Quidem placeat inventore sapiente! Impedit cum sit vero ipsa a illum magni culpa, quae et, ipsam esse fuga obcaecati quisquam blanditiis reprehenderit nemo facere ratione eligendi pariatur. Est ipsam doloribus soluta exercitationem ex blanditiis consequatur illo dicta sit alias. Accusantium veniam voluptatibus ipsam delectus impedit eaque quo ex laboriosam quasi? Ad, praesentium. Fugiat ex animi ratione iusto porro nostrum neque ea minima nemo sed.</p>
+</div>
+
+<div class="mt-32 max-w-xl mx-auto h-96 bg-slate-300 bg-contain bg-no-repeat bg-center rounded-2xl shadow-xl shadow-slate-500 border-8 flex" style="background-image: url(./img/1.jpg);">
+<div class="w-[200px] h-[200px] bg-white/30 m-auto backdrop-blur-md rounded-full"></div>
+</div>
+
+<hr class="my-20">
+
+
+<div class="flex justify-center">
+    <span class="text-sm text-slate-500 mr-2">light</span>
+    <input type="checkbox" id="toggle" class="hidden">
+    <label for="toggle">
+        <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+            <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+        </div>
+        
+    </label>
+    <span class="text-sm text-slate-500 ml-2">dark</span>
+</div>
+
+
+
+<button class="my-10 bg-sky-500 px-5 py-2 rounded-full text-white font-semibold font-inter block mx-auto hover:bg-sky-600 active:bg-sky-700 focus:ring-sky-300 dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-900 dark:hover:bg-slate-100">SIMPAN</button>
+
+<div class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-serif hover:bg-sky-700 group dark:hover:bg-slate-300"> 
+    <h5 class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white dark:group-hover:text-slate-800">My Card</h5>
+    <p class="text-slate-600 group-hover:text-white selection:bg-slate-900 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 dark:group-hover:text-slate-800">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio porro maiores praesentium in ex possimus architecto iste? Possimus, maiores earum soluta aperiam eligendi blanditiis corrupti, atque velit, iusto ex ipsa?</p>
+</div>
+
+
+<div class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-serif">
+<form action="">
+    <label for="email">
+        <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0,5">Email</span>
+        <input type="email" id="email" placeholder="masukan email.." class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer">
+        <p class="text-sm m-1 text-pink-700 invisible peer-invalid:visible">Email tidak valid</p>
+    </label>
+</form>
+</div>
+
+
+<hr class="my-20" />
+
+<div class="w-40 h-40 bg-sky-500 mx-auto rounded-lg shadow-lg hover:scale-125 hover:rotate-45 hover:bg-pink-500 transition origin-top-left"></div>
+<div class="w-40 h-40 mx-auto mt-20 group">
+    <div class="w-full h-full bg-sky-500 rounded-lg shadow-lg group-hover:rotate-180 origin-top-left transition duration-1000 ease"></div>
+</div>
+
+<div class="w-40 h-40 bg-pink-500 mx-auto rounded-lg shadow-lg mt-20 animate-goyang"></div>
+
+
+<hr class="my-20 border-t-4">
+
+<div class="container px-8 mx-auto">
+    <div class="border rounded-lg shadow-lg p-10 relative">
+        <div class="w-10 h-10 bg-pink-200 rounded-full flex fixed bottom-5 right-5 cursor-pointer"><a href="#" class="text-lg m-auto">⬆</a></div>
+        <img src="img/1.jpg" alt="laptop" width="150" class="float-left mr-3" />
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam perferendis fuga culpa, tenetur hic ex incidunt recusandae odit earum rem sequi quisquam suscipit impedit, sit optio nulla amet accusamus. Laborum architecto nostrum odit harum. Corrupti culpa ea maiores? Et consectetur tempora pariatur quae animi commodi magnam, maiores, optio laboriosam eum nostrum nulla id est dicta, minus ipsam suscipit! Cupiditate, saepe? Doloremque, deserunt, sint libero perferendis, illo voluptatibus ex quas odio tempora ratione adipisci nihil dolore. Laborum, repellendus aperiam temporibus deserunt nihil consequatur tenetur accusamus possimus non adipisci! Odit magni nulla, repellendus ab atque fugiat, ullam beatae maiores rerum, minima dolores!</p> 
+    </div>
+</div>
+
+<div class="container border rounded-lg shadow-lg p-10 mt-20 columns-6">
+    <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" >
+    <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" >
+    <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" >
+    <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" >
+    <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" >
+    <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" >
+</div>
+
+<div class="mb-96"></div>
+
+
+<script>
+    const checkbox = document.querySelector('#toggle');
+    const html = document.querySelector('html');
+    checkbox.addEventListener('click', function() {
+        checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+    })
+</script>
+
+</body>
+</html>
